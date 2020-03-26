@@ -1,5 +1,4 @@
 import * as Phaser from 'phaser';
-import Scenes from './scenes';
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Sample',
@@ -10,8 +9,6 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     width: window.innerWidth,
     height: window.innerHeight,
   },
-
-  scene: Scenes,
 
   physics: {
     default: 'arcade',
@@ -25,7 +22,3 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 };
 
 export const game = new Phaser.Game(gameConfig);
-
-window.addEventListener('resize', () => {
-  game.scale.refresh();
-});
