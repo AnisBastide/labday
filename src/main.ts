@@ -48,10 +48,14 @@ function update() {
   }
   if(gameState.cursors.up.isDown){
     gameState.codey.y-=5;
-    setTimeout(function(){gameState.codey.y+=5},100);
   }
   if(gameState.cursors.down.isDown){
     gameState.codey.y+=5;
+  }
+  if(gameState.cursors.space.isDown){
+    gameState.codey.y-=5;
+    setTimeout(function(){gameState.codey.y+=5},100);
+
   }
 }
 
