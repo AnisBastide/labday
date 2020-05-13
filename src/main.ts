@@ -41,7 +41,7 @@ function create() {
     // Set cursor keys here!
     var platforms = this.physics.add.staticGroup();
     platforms.create(48, innerHeight - 12, 'ground');
-    platforms.create(96+12, innerHeight - 48, 'wall');
+    platforms.create(108, innerHeight - 48, 'wall');
     gameState.player = this.physics.add.sprite(48, innerHeight -100, 'player');
     gameState.player.setBounce(0.2);
     gameState.player.setCollideWorldBounds(true);
