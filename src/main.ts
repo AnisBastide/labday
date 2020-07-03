@@ -30,45 +30,31 @@ const gameState = {
 };
 
 function preload() {
-    this.load.spritesheet('player', 'assets/spritesheetExample.png', {frameWidth: 144, frameHeight: 144});
+    this.load.spritesheet('player', 'assets/spritesheetExample2.png', {frameWidth: 144, frameHeight: 144});
     this.load.image('ground', 'assets/ground.png');
     this.load.image('platform', 'assets/platform.png');
     this.load.image('dirt', 'assets/blocdirt.png');
     this.load.image('smallplatform', 'assets/smallplatform.png');
+    this.load.image('blockSideUp', 'assets/plateforme/texture/blocksideup.png');
+    this.load.image('blockSideRight', 'assets/plateforme/texture/blocksideright.png');
 }
 
 function create() {
     // gameState.codey = this.add.sprite(150, 200, 'codey');
     //  gameState.cursors = this.input.keyboard.createCursorKeys();
     // Set cursor keys here!
+
     const platforms = this.physics.add.staticGroup();
-    platforms.create(920, innerHeight - 12, 'ground');
-    platforms.create(1840, innerHeight - 12, 'ground');
-    platforms.create(150, innerHeight - 300, 'platform');
-    // first floor
-    platforms.create(332, innerHeight - 57, 'smallplatform');
-    platforms.create(364, innerHeight - 57, 'dirt');
-    platforms.create(388, innerHeight - 57, 'dirt');
-    platforms.create(388, innerHeight - 57, 'dirt');
-    platforms.create(412, innerHeight - 57, 'dirt');
-    platforms.create(436, innerHeight - 57, 'dirt');
-    platforms.create(460, innerHeight - 57, 'dirt');
-    platforms.create(484, innerHeight - 57, 'smallplatform');
-    // second floor
-    platforms.create(356, innerHeight - 81, 'smallplatform');
-    platforms.create(388, innerHeight - 81, 'dirt');
-    platforms.create(388, innerHeight - 81, 'dirt');
-    platforms.create(412, innerHeight - 81, 'dirt');
-    platforms.create(436, innerHeight - 81, 'dirt');
-    platforms.create(460, innerHeight - 81, 'smallplatform');
-    // third floor
-    platforms.create(380, innerHeight - 105, 'smallplatform');
-    platforms.create(388, innerHeight - 105, 'dirt');
-    platforms.create(412, innerHeight - 105, 'dirt');
-    platforms.create(460, innerHeight - 105, 'smallplatform');
+    platforms.create(0, innerHeight - 12, 'blockSideUp');
+    platforms.create(64, innerHeight - 12, 'blockSideUp');
+    platforms.create(128, innerHeight - 12, 'blockSideUp');
+    platforms.create(192, innerHeight - 12, 'blockSideUp');
+    platforms.create(0, innerHeight - 76, 'blockSideRight');
+    platforms.create(0, innerHeight - 140, 'blockSideRight');
+    platforms.create(0, innerHeight - 204, 'blockSideRight');
+    platforms.create(0, innerHeight - 268, 'blockSideRight');
     //
-    //
-    gameState.player = this.physics.add.sprite(1500, innerHeight - 150, 'player');
+    gameState.player = this.physics.add.sprite(164, innerHeight - 150, 'player');
     gameState.player.setBounce(0.2);
     this.player = gameState.player;
     this.physics.add.collider(gameState.player, platforms);
