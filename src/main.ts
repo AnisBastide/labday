@@ -1,4 +1,5 @@
 import * as Phaser from 'phaser';
+import plateformPlacement from './plateformPlacement';
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Sample',
@@ -97,6 +98,7 @@ function create() {
         frameRate: 1,
         repeat: -1,
     });
+    const plateform = new plateformPlacement();
 }
 
 function update() {
